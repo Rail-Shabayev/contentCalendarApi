@@ -1,14 +1,12 @@
 package com.rail.calendar.controller;
 
 import com.rail.calendar.model.Content;
-import com.rail.calendar.repo.ContentCollectionRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.rail.calendar.repo.ContentRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
-import java.util.Optional;
 
 import static org.springframework.http.HttpStatus.CREATED;
 
@@ -16,11 +14,12 @@ import static org.springframework.http.HttpStatus.CREATED;
 @RequestMapping("/api/content")
 public class ContentController {
 
-    private final ContentCollectionRepository repository;
+    private final ContentRepository repository;
 
-    public ContentController(ContentCollectionRepository repository) {
+    public ContentController(ContentRepository repository) {
         this.repository = repository;
     }
+
 
     @GetMapping
     public List<Content> findAll() {
