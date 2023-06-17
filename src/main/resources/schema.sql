@@ -7,4 +7,4 @@ CREATE TABLE IF NOT EXISTS Content (
     date_created TIMESTAMP NOT NULL,
     date_updated TIMESTAMP,
     url VARCHAR(255)
-);
+    );
